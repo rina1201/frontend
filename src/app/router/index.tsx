@@ -4,9 +4,10 @@ import { RootLayout } from "@/app/layouts/RootLayout";
 import { OnboardingGate } from "@/app/router/OnboardingGate";
 import { ProtectedRoute } from "@/app/router/ProtectedRoute";
 import { AuthCallbackPage } from "@/pages/AuthCallbackPage";
+import { DevMapSelectPage } from "@/pages/dev/DevMapSelectPage";
 import { EntryPage } from "@/pages/EntryPage";
 import { LoginPage } from "@/pages/LoginPage";
-import { MapHomePage } from "@/pages/map/MapHomePage";
+import { MapHomePage_WithFilter } from "@/pages/map/MapHomePage_WithFilter";
 import { NicknamePage } from "@/pages/onboarding/NicknamePage";
 import { TermsAgreementPage } from "@/pages/onboarding/TermsAgreementPage";
 import { RoomMainPage } from "@/pages/room/RoomMainPage";
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <EntryPage /> },
       { path: "dev/splash", element: <SplashScreenPage /> },
+      { path: "dev/map-select", element: <DevMapSelectPage /> },
       { path: "login", element: <LoginPage /> },
       { path: "app", element: <Navigate to="/" replace /> },
       {
@@ -52,7 +54,7 @@ export const router = createBrowserRouter([
         ),
         children: [
           { path: "room", element: <RoomMainPage /> },
-          { path: "map", element: <MapHomePage /> },
+          { path: "map", element: <MapHomePage_WithFilter /> },
           { path: "list", element: <PlaceListPage /> },
           { path: "course", element: <CoursePlannerPage /> },
           { path: "mypage", element: <MyPage /> },
